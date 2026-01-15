@@ -11,15 +11,15 @@ const FlowDiagram: React.FC<DiagramProps> = ({ iconClass, iconColorClass, title,
       <React.Fragment key={nodeIndex}>
         {node.subNodes ? (
           <div
-            className={`p-4 border border-dashed ${node.className || 'border-slate-500/50'} rounded w-full md:w-2/3 bg-slate-800/30 ${isSelected ? 'selected-diagram-node' : ''}`}
+            className={`p-4 border border-dashed ${node.className || 'border-purple-600/50'} rounded w-full md:w-2/3 bg-purple-900/30 ${isSelected ? 'selected-diagram-node' : ''}`}
             onClick={() => onNodeClick(archIndex, nodeIndex)}
           >
-            <p className="text-cyan-400 mb-2 font-bold">{node.text}</p>
+            <p className="text-purple-400 mb-2 font-bold">{node.text}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {node.subNodes.map((row, rowIndex) => (
                   <React.Fragment key={rowIndex}>
                       {row.map((subNode, subIndex) => (
-                          <div key={`${rowIndex}-${subIndex}`} className={`diagram-node bg-slate-900 ${subNode.className || ''}`}>{subNode.text}</div>
+                          <div key={`${rowIndex}-${subIndex}`} className={`diagram-node bg-purple-950 ${subNode.className || ''}`}>{subNode.text}</div>
                       ))}
                   </React.Fragment>
               ))}
@@ -39,12 +39,12 @@ const FlowDiagram: React.FC<DiagramProps> = ({ iconClass, iconColorClass, title,
 
   return (
     <div className="glass-panel rounded-xl overflow-hidden">
-      <div className="bg-slate-800/50 p-4 border-b border-slate-700 flex justify-between items-center">
+      <div className="bg-purple-900/50 p-4 border-b border-purple-800 flex justify-between items-center">
         <h3 className={`font-mono text-sm ${iconColorClass.replace('text-', 'text-')}`}>{title}</h3>
         <i className={`${iconClass} ${iconColorClass}`}></i>
       </div>
       <div className="p-6">
-        <div className="flex flex-col items-center space-y-2 mb-8 font-mono text-xs text-slate-300">
+        <div className="flex flex-col items-center space-y-2 mb-8 font-mono text-xs text-purple-300">
           {nodes.map((node, index) => (
             <React.Fragment key={index}>
               {renderNode(node, index)}

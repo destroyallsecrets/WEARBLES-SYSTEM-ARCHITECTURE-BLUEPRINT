@@ -9,16 +9,16 @@ const architectureData: ArchitectureData[] = [
   {
     id: 'arch-1',
     methodTag: 'METHOD 01',
-    methodTagColorClass: 'bg-blue-600',
+    methodTagColorClass: 'bg-purple-700', // Deep purple
     title: 'Asynchronous Multimodal Webhook Orchestration',
     diagram: {
       iconClass: 'fa-brands fa-whatsapp',
-      iconColorClass: 'text-green-500',
+      iconColorClass: 'text-emerald-400', // Complementary green
       title: 'ARCH_DIAGRAM: MSG_INTERCEPT',
       nodes: [
         {
           text: 'Client Hardware (Optical Capture)',
-          className: 'border-green-500/30',
+          className: 'border-emerald-500/30', // Updated border color
           explanation: 'This refers to the Meta Ray-Ban Smart Glasses capturing images or videos from the user\'s perspective. This is the initial data source.',
         },
         {
@@ -27,13 +27,13 @@ const architectureData: ArchitectureData[] = [
         },
         {
           text: 'Middleware Layer (Python/Node.js)',
-          className: 'border-cyan-500/50',
+          className: 'border-purple-500/50', // Updated border color
           explanation: 'A custom server-side application built with Python or Node.js that processes incoming payloads. It includes a Payload Parser to interpret the data and a Context Manager to maintain conversation history.',
           subNodes: [[{ text: 'Payload Parser' }, { text: 'Context Manager' }]],
         },
         {
           text: 'Inference Engine (GPT-4o / Gemini 1.5)',
-          className: 'border-purple-500/30',
+          className: 'border-indigo-500/30', // Updated border color
           explanation: 'The core AI model (e.g., GPT-4o or Gemini 1.5) that analyzes the visual and textual data, generates responses, and performs tasks based on the input.',
         },
         {
@@ -45,30 +45,30 @@ const architectureData: ArchitectureData[] = [
     ingestionProtocol: {
       title: 'Ingestion Protocol',
       items: [
-        { prefix: '>', prefixColorClass: 'text-cyan-500', content: 'Protocol: HTTPS Webhooks' },
-        { prefix: '>', prefixColorClass: 'text-cyan-500', content: 'Payload: JSON (MIME: image/jpeg)' },
-        { prefix: '>', prefixColorClass: 'text-cyan-500', content: 'Latency Target: <2500ms' },
-        { prefix: '>', prefixColorClass: 'text-cyan-500', content: 'Endpoint: Meta Graph API v19.0' },
+        { prefix: '>', prefixColorClass: 'text-purple-400', content: 'Protocol: HTTPS Webhooks' },
+        { prefix: '>', prefixColorClass: 'text-purple-400', content: 'Payload: JSON (MIME: image/jpeg)' },
+        { prefix: '>', prefixColorClass: 'text-purple-400', content: 'Latency Target: <2500ms' },
+        { prefix: '>', prefixColorClass: 'text-purple-400', content: 'Endpoint: Meta Graph API v19.0' },
       ],
     },
     computeStack: {
       title: 'Compute Stack',
       items: [
-        { prefix: '#', prefixColorClass: 'text-purple-500', content: 'Runtime: AWS Lambda / Docker Container' },
-        { prefix: '#', prefixColorClass: 'text-purple-500', content: 'Vision Model: Transformer-based VLM' },
-        { prefix: '#', prefixColorClass: 'text-purple-500', content: 'State Mgmt: Redis (Conversation History)' },
-        { prefix: '#', prefixColorClass: 'text-purple-500', content: 'Output: Twilio Programmable Msg / Graph API' },
+        { prefix: '#', prefixColorClass: 'text-indigo-400', content: 'Runtime: AWS Lambda / Docker Container' },
+        { prefix: '#', prefixColorClass: 'text-indigo-400', content: 'Vision Model: Transformer-based VLM' },
+        { prefix: '#', prefixColorClass: 'text-indigo-400', content: 'State Mgmt: Redis (Conversation History)' },
+        { prefix: '#', prefixColorClass: 'text-indigo-400', content: 'Output: Twilio Programmable Msg / Graph API' },
       ],
     },
   },
   {
     id: 'arch-2',
     methodTag: 'METHOD 02',
-    methodTagColorClass: 'bg-red-600',
+    methodTagColorClass: 'bg-indigo-700', // Darker indigo
     title: 'Real-Time RTMP Frame Extraction & CV Pipeline',
     diagram: {
       iconClass: 'fa-solid fa-video',
-      iconColorClass: 'text-red-500',
+      iconColorClass: 'text-rose-400', // Complementary red
       title: 'ARCH_DIAGRAM: VIDEO_INGEST',
       nodes: [
         {
@@ -81,7 +81,7 @@ const architectureData: ArchitectureData[] = [
         },
         {
           text: 'Local Inference Server (GPU)',
-          className: 'border-red-500/50',
+          className: 'border-rose-500/50', // Updated border color
           explanation: 'A powerful local server equipped with a GPU processes the video stream in real-time. It uses an FFmpeg Frame Buffer to extract individual frames and feeds them to Computer Vision models like YOLOv8 for object detection or facial recognition.',
           subNodes: [[{ text: 'FFmpeg Frame Buffer' }], [{ text: 'YOLOv8 / Facial Recognition Model' }]],
         },
@@ -94,30 +94,30 @@ const architectureData: ArchitectureData[] = [
     ingestionProtocol: {
       title: 'Stream Configuration',
       items: [
-        { prefix: '>', prefixColorClass: 'text-red-500', content: 'Transport: RTMP / RTMPS' },
-        { prefix: '>', prefixColorClass: 'text-red-500', content: 'Frame Rate: 30fps (Keyframe Interval: 2s)' },
-        { prefix: '>', prefixColorClass: 'text-red-500', content: 'Resolution: 1080p Downsampled to 720p' },
-        { prefix: '>', prefixColorClass: 'text-red-500', content: 'Buffer: Zero-latency configuration' },
+        { prefix: '>', prefixColorClass: 'text-rose-400', content: 'Transport: RTMP / RTMPS' },
+        { prefix: '>', prefixColorClass: 'text-rose-400', content: 'Frame Rate: 30fps (Keyframe Interval: 2s)' },
+        { prefix: '>', prefixColorClass: 'text-rose-400', content: 'Resolution: 1080p Downsampled to 720p' },
+        { prefix: '>', prefixColorClass: 'text-rose-400', content: 'Buffer: Zero-latency configuration' },
       ],
     },
     computeStack: {
       title: 'Processing Matrix',
       items: [
-        { prefix: '#', prefixColorClass: 'text-orange-500', content: 'Framework: PyTorch / TensorRT' },
-        { prefix: '#', prefixColorClass: 'text-orange-500', content: 'Library: OpenCV (cv2)' },
-        { prefix: '#', prefixColorClass: 'text-orange-500', content: 'Hardware: CUDA Core GPU Local' },
-        { prefix: '#', prefixColorClass: 'text-orange-500', content: 'Feedback: Bluetooth A2DP Sink' },
+        { prefix: '#', prefixColorClass: 'text-amber-400', content: 'Framework: PyTorch / TensorRT' },
+        { prefix: '#', prefixColorClass: 'text-amber-400', content: 'Library: OpenCV (cv2)' },
+        { prefix: '#', prefixColorClass: 'text-amber-400', content: 'Hardware: CUDA Core GPU Local' },
+        { prefix: '#', prefixColorClass: 'text-amber-400', content: 'Feedback: Bluetooth A2DP Sink' },
       ],
     },
   },
   {
     id: 'arch-3',
     methodTag: 'METHOD 03',
-    methodTagColorClass: 'bg-indigo-600',
+    methodTagColorClass: 'bg-fuchsia-700', // Darker fuchsia
     title: 'Native Mobile Bridge (SDK Implementation)',
     diagram: {
       iconClass: 'fa-brands fa-android',
-      iconColorClass: 'text-indigo-500',
+      iconColorClass: 'text-fuchsia-400', // Complementary fuchsia
       title: 'ARCH_DIAGRAM: BLE_GATT_BRIDGE',
       nodes: [
         {
@@ -126,12 +126,12 @@ const architectureData: ArchitectureData[] = [
         },
         {
           text: 'BLE 5.2 / WiFi Direct Transport',
-          className: 'border-indigo-500',
+          className: 'border-fuchsia-500', // Updated border color
           explanation: 'Data is transported wirelessly using BLE 5.2 or potentially WiFi Direct for higher bandwidth requirements, connecting the glasses to a mobile device.',
         },
         {
           text: 'Host Application (Android/iOS)',
-          className: 'border-indigo-500/50',
+          className: 'border-fuchsia-500/50', // Updated border color
           explanation: 'A native mobile application (Android or iOS) running on a smartphone acts as the central device. It discovers BLE services on the glasses and subscribes to data characteristics for real-time information retrieval.',
           subNodes: [[{ text: 'Service Discovery' }, { text: 'Data Subscribe' }]],
         },
@@ -144,18 +144,18 @@ const architectureData: ArchitectureData[] = [
     ingestionProtocol: {
       title: 'Connectivity Stack',
       items: [
-        { prefix: '>', prefixColorClass: 'text-indigo-500', content: 'Protocol: GATT (Generic Attribute Profile)' },
-        { prefix: '>', prefixColorClass: 'text-indigo-500', content: 'SDK: Meta Wearables Device Access Toolkit' },
-        { prefix: '>', prefixColorClass: 'text-indigo-500', content: 'Topology: Central (Phone) <-> Peripheral (Glasses)' },
-        { prefix: '>', prefixColorClass: 'text-indigo-500', content: 'Transport: High-bandwidth BLE L2CAP' },
+        { prefix: '>', prefixColorClass: 'text-fuchsia-400', content: 'Protocol: GATT (Generic Attribute Profile)' },
+        { prefix: '>', prefixColorClass: 'text-fuchsia-400', content: 'SDK: Meta Wearables Device Access Toolkit' },
+        { prefix: '>', prefixColorClass: 'text-fuchsia-400', content: 'Topology: Central (Phone) <-> Peripheral (Glasses)' },
+        { prefix: '>', prefixColorClass: 'text-fuchsia-400', content: 'Transport: High-bandwidth BLE L2CAP' },
       ],
     },
     computeStack: {
       title: 'Runtime Environment',
       items: [
-        { prefix: '#', prefixColorClass: 'text-pink-500', content: 'Native: Kotlin (Android) / Swift (iOS)' },
-        { prefix: '#', prefixColorClass: 'text-pink-500', content: 'Event Loop: React Native Bridge (Optional)' },
-        { prefix: '#', prefixColorClass: 'text-pink-500', content: 'Permissions: BLUETOOTH_CONNECT, ACCESS_FINE_LOCATION' },
+        { prefix: '#', prefixColorClass: 'text-rose-400', content: 'Native: Kotlin (Android) / Swift (iOS)' },
+        { prefix: '#', prefixColorClass: 'text-rose-400', content: 'Event Loop: React Native Bridge (Optional)' },
+        { prefix: '#', prefixColorClass: 'text-rose-400', content: 'Permissions: BLUETOOTH_CONNECT, ACCESS_FINE_LOCATION' },
       ],
     },
   },

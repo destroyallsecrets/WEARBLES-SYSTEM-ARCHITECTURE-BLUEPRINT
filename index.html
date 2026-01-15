@@ -11,8 +11,8 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
+            background-color: #21023a; /* Deep Purple */
+            color: #ffffff; /* White text */
         }
         
         .font-mono {
@@ -21,15 +21,15 @@
 
         /* Technical Grid Background */
         .bg-grid {
-            background-image: linear-gradient(to right, #1e293b 1px, transparent 1px),
-                              linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+            background-image: linear-gradient(to right, #37075c 1px, transparent 1px), /* Darker purple grid lines */
+                              linear-gradient(to bottom, #37075c 1px, transparent 1px);
             background-size: 40px 40px;
         }
         
         .glass-panel {
-            background: rgba(30, 41, 59, 0.7);
+            background: rgba(33, 2, 58, 0.7); /* Translucent deep purple */
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.1); /* Purple-400/10 */
         }
 
         .status-dot {
@@ -40,25 +40,25 @@
         }
 
         .diagram-node {
-            background: #1e293b;
-            border: 1px solid #475569;
+            background: #37075c; /* Darker purple */
+            border: 1px solid #6b21a8; /* Purple-700 */
             padding: 0.5rem;
             border-radius: 0.375rem;
             font-size: 0.75rem;
             text-align: center;
-            cursor: pointer; /* Added cursor for interactivity */
-            transition: all 0.2s ease-in-out; /* Smooth transition */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
         }
         
         .diagram-node:hover {
-            border-color: #60a5fa; /* Blue hover effect */
-            box-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
+            border-color: #c084fc; /* Purple-400 hover effect */
+            box-shadow: 0 0 8px rgba(192, 132, 252, 0.3);
         }
 
         .diagram-node.selected-diagram-node {
-            border-color: #0ea5e9; /* Cyan for selected node */
-            box-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
-            background-color: #1a273a; /* Slightly lighter background for selected */
+            border-color: #a855f7; /* Purple-500 for selected node */
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+            background-color: #4a0d78; /* Slightly lighter purple for selected */
         }
 
         .arrow-down {
@@ -66,7 +66,7 @@
             height: 0; 
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
-            border-top: 5px solid #64748b;
+            border-top: 5px solid #c084fc; /* Purple-400 */
             margin: 0 auto;
         }
     </style>
