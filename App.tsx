@@ -171,12 +171,7 @@ const App: React.FC = () => {
       setSelectedNodeInfo(null);
     } else {
       setSelectedNodeInfo({ archIndex, nodeIndex });
-      // Scroll to the explanation panel after state update
-      setTimeout(() => {
-        if (explanationPanelRef.current) {
-          explanationPanelRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100); // Small delay to allow state update and rendering
+      // Removed the auto-scroll functionality
     }
   };
 
