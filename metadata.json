@@ -1,0 +1,5 @@
+{
+  "name": "System Architecture Blueprint",
+  "description": "An interactive blueprint detailing three distinct methodologies for bypassing firmware constraints on proprietary optical wearable hardware, showcasing asynchronous multimodal webhook orchestration, real-time RTMP frame extraction, and native mobile bridge implementation.",
+  "requestFramePermissions": []
+}
